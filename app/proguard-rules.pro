@@ -22,3 +22,5 @@
 
 -dontwarn okio.**
 -dontwarn javax.annotation.**
+
+-dontwarn com.squareup.okhttp.**

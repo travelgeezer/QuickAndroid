@@ -2,8 +2,10 @@ package com.example.geezer.quickandroid;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.geezer.quickandroid.managers.glide.GlideApp;
 import com.example.geezer.quickandroid.network.SampleService;
 
 import java.util.List;
@@ -28,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::printContributor, Throwable::printStackTrace);
+
+        // use glide load image
+        ImageView image = findViewById(R.id.imageView3);
+        GlideApp.with(this)
+                .load("https://b-ssl.duitang.com/uploads/item/201503/27/20150327200628_3Sxtv.jpeg")
+                .into(image);
 
     }
 
